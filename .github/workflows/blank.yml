@@ -1,0 +1,28 @@
+name: "Nautical Fun Fact"
+
+on:
+  schedule:
+    - cron: "0 17 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+
+      - name: Install requirements
+        run: |
+          pip install discord.py  # or py-cord or whatever you use
+
+      - name: Send fact
+        run: python send_fact.py
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
