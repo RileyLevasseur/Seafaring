@@ -5,7 +5,6 @@ import discord
 BOT_TOKEN = os.environ["DISCORD_BOT_TOKEN"]
 CHANNEL_ID = int(os.environ["CHANNEL_ID"])
 
-# Hardcode or fetch your fact of the day
 NAUTICAL_FACTS = [
     "Ships' anchors are so old that their design dates back to at least 2000 BCE—ancient sailors used rocks tied to ropes as the first anchors! Modern anchors have a similar concept but are far more effective at gripping the seabed."
 ]
